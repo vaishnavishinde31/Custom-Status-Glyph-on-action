@@ -28,24 +28,24 @@ public class ChangeIcon extends DefaultInfoComponentBuilder {
 	     @Override
     public InfoConfig buildInfoConfig(ComponentParams var1) throws WTException {
       System.out.println("Info page config begin");
-        InfoComponentConfigFactory var2 = this.getComponentConfigFactory();
-        InfoConfig var3 = var2.newInfoConfig();
-        List var4 = var2.getStandardStatusConfigs();
-        PropertyConfig var5 = var2.newPropertyConfig("netmarkets\\images\\approbt.gif");
-        var5.setStatusGlyph(true);
-        var5.setDataUtilityId("customdatautility");
-        var4.add(var5);
-        Iterator var6 = var4.iterator();
+        InfoComponentConfigFactory factory = this.getComponentConfigFactory();
+        InfoConfig infoconfig = factory.newInfoConfig();
+        List list = factory.getStandardStatusConfigs();
+        PropertyConfig propconfig = factory.newPropertyConfig("netmarkets\\images\\approbt.gif");
+        propconfig.setStatusGlyph(true);
+        propconfig.setDataUtilityId("customdatautility");
+        list.add(propconfig);
+        Iterator iter = list.iterator();
 
-        while(var6.hasNext()) {
-           ComponentConfig var7 = (ComponentConfig)var6.next();
-           var3.addComponent(var7);
+        while(iter.hasNext()) {
+           ComponentConfig componentconfig = (ComponentConfig)iter.next();
+           infoconfig.addComponent(componentconfig);
         }
 
-        var3.setNavBarName("third_level_nav_part");
-        var3.setHelpContext("part.view");
-        var3.setTabSet("partInfoPageTabSet");
-        return var3;
+        infoconfig.setNavBarName("third_level_nav_part");
+        infoconfig.setHelpContext("part.view");
+        infoconfig.setTabSet("partInfoPageTabSet");
+        return infoconfig;
      }
 	   
 }
